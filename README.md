@@ -2,7 +2,7 @@
 
 ## Description
 
-PetStore est une application Java EE utilisant JPA et Hibernate pour gérer une animalerie. L'application permet de gérer des entités telles que des produits, des animaux, des magasins d'animaux et des adresses. Elle utilise H2 en tant que base de données embarquée pour le stockage des données.
+PetStore est une application Java EE utilisant JPA et Hibernate pour gérer une animalerie. L'application permet de gérer des entités telles que des produits, des animaux, des magasins d'animaux et des adresses. Elle utilise H2 en tant que base de données embarquée pour le stockage des données. Des applications comme HeidiSQL sont utilisés pour faciliter la vision de la BDD et l'utiliser.
 
 ## But du Projet
 
