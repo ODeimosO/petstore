@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>TestJPA.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TestJPA.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org</span><span class="s2">.</span><span class="s1">esaip</span><span class="s2">.</span><span class="s1">ir2324</span><span class="s2">.</span><span class="s1">petstore</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">esaip</span><span class="s2">.</span><span class="s1">ir2324</span><span class="s2">.</span><span class="s1">petstore</span><span class="s2">.</span><span class="s1">model</span><span class="s2">.*;</span>
+
+<span class="s0">import </span><span class="s1">javax</span><span class="s2">.</span><span class="s1">persistence</span><span class="s2">.</span><span class="s1">EntityManager</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javax</span><span class="s2">.</span><span class="s1">persistence</span><span class="s2">.</span><span class="s1">EntityManagerFactory</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javax</span><span class="s2">.</span><span class="s1">persistence</span><span class="s2">.</span><span class="s1">Persistence</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Date</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">TestJPA </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s1">EntityManagerFactory emf </span><span class="s2">= </span><span class="s1">Persistence</span><span class="s2">.</span><span class="s1">createEntityManagerFactory</span><span class="s2">(</span><span class="s3">&quot;default&quot;</span><span class="s2">);</span>
+        <span class="s1">EntityManager em </span><span class="s2">= </span><span class="s1">emf</span><span class="s2">.</span><span class="s1">createEntityManager</span><span class="s2">();</span>
+
+        <span class="s1">em</span><span class="s2">.</span><span class="s1">getTransaction</span><span class="s2">().</span><span class="s1">begin</span><span class="s2">();</span>
+
+        <span class="s4">// Mes entités</span>
+        <span class="s1">Address address </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Address</span><span class="s2">();</span>
+        <span class="s1">address</span><span class="s2">.</span><span class="s1">setNumber</span><span class="s2">(</span><span class="s3">&quot;123&quot;</span><span class="s2">);</span>
+        <span class="s1">address</span><span class="s2">.</span><span class="s1">setStreet</span><span class="s2">(</span><span class="s3">&quot;Main St&quot;</span><span class="s2">);</span>
+        <span class="s1">address</span><span class="s2">.</span><span class="s1">setZipCode</span><span class="s2">(</span><span class="s3">&quot;12345&quot;</span><span class="s2">);</span>
+        <span class="s1">address</span><span class="s2">.</span><span class="s1">setCity</span><span class="s2">(</span><span class="s3">&quot;Sample City&quot;</span><span class="s2">);</span>
+
+        <span class="s1">PetStore store </span><span class="s2">= </span><span class="s0">new </span><span class="s1">PetStore</span><span class="s2">();</span>
+        <span class="s1">store</span><span class="s2">.</span><span class="s1">setName</span><span class="s2">(</span><span class="s3">&quot;Awesome Pet Store&quot;</span><span class="s2">);</span>
+        <span class="s1">store</span><span class="s2">.</span><span class="s1">setManagerName</span><span class="s2">(</span><span class="s3">&quot;John Doe&quot;</span><span class="s2">);</span>
+        <span class="s1">store</span><span class="s2">.</span><span class="s1">setAddress</span><span class="s2">(</span><span class="s1">address</span><span class="s2">);</span>
+
+        <span class="s1">Product product </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Product</span><span class="s2">();</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setCode</span><span class="s2">(</span><span class="s3">&quot;P001&quot;</span><span class="s2">);</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setLabel</span><span class="s2">(</span><span class="s3">&quot;Cat Food&quot;</span><span class="s2">);</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setType</span><span class="s2">(</span><span class="s1">ProdType</span><span class="s2">.</span><span class="s1">FOOD</span><span class="s2">);</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setPrice</span><span class="s2">(</span><span class="s5">19.99</span><span class="s2">);</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setPetStore</span><span class="s2">(</span><span class="s1">store</span><span class="s2">);</span>
+
+        <span class="s1">Animal cat </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Cat</span><span class="s2">();</span>
+        <span class="s1">cat</span><span class="s2">.</span><span class="s1">setBirth</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Date</span><span class="s2">());</span>
+        <span class="s1">cat</span><span class="s2">.</span><span class="s1">setCouleur</span><span class="s2">(</span><span class="s3">&quot;Brown&quot;</span><span class="s2">);</span>
+        <span class="s2">((</span><span class="s1">Cat</span><span class="s2">) </span><span class="s1">cat</span><span class="s2">).</span><span class="s1">setChipId</span><span class="s2">(</span><span class="s3">&quot;CHP123&quot;</span><span class="s2">);</span>
+        <span class="s1">cat</span><span class="s2">.</span><span class="s1">setPetStore</span><span class="s2">(</span><span class="s1">store</span><span class="s2">);</span>
+
+        <span class="s1">em</span><span class="s2">.</span><span class="s1">persist</span><span class="s2">(</span><span class="s1">address</span><span class="s2">);</span>
+        <span class="s1">em</span><span class="s2">.</span><span class="s1">persist</span><span class="s2">(</span><span class="s1">store</span><span class="s2">);</span>
+        <span class="s1">em</span><span class="s2">.</span><span class="s1">persist</span><span class="s2">(</span><span class="s1">product</span><span class="s2">);</span>
+        <span class="s1">em</span><span class="s2">.</span><span class="s1">persist</span><span class="s2">(</span><span class="s1">cat</span><span class="s2">);</span>
+
+        <span class="s1">em</span><span class="s2">.</span><span class="s1">getTransaction</span><span class="s2">().</span><span class="s1">commit</span><span class="s2">();</span>
+        <span class="s1">em</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+        <span class="s1">emf</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

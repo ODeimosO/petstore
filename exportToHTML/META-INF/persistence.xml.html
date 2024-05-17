@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>persistence.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+persistence.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s2">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s2">=&quot;UTF-8&quot; </span><span class="s1">standalone</span><span class="s2">=&quot;yes&quot;</span><span class="s0">?&gt;</span>
+<span class="s0">&lt;persistence </span><span class="s1">xmlns</span><span class="s2">=&quot;https://jakarta.ee/xml/ns/persistence&quot;</span>
+             <span class="s1">xmlns:xsi</span><span class="s2">=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+             <span class="s1">xsi:schemaLocation</span><span class="s2">=&quot;https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd&quot;</span>
+             <span class="s1">version</span><span class="s2">=&quot;3.0&quot;</span><span class="s0">&gt;</span>
+  <span class="s0">&lt;persistence-unit </span><span class="s1">name</span><span class="s2">=&quot;default&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;class&gt;</span><span class="s3">org.esaip.ir2324.petstore.model.Address</span><span class="s0">&lt;/class&gt;</span>
+    <span class="s0">&lt;class&gt;</span><span class="s3">org.esaip.ir2324.petstore.model.Animal</span><span class="s0">&lt;/class&gt;</span>
+    <span class="s0">&lt;class&gt;</span><span class="s3">org.esaip.ir2324.petstore.model.Cat</span><span class="s0">&lt;/class&gt;</span>
+    <span class="s0">&lt;class&gt;</span><span class="s3">org.esaip.ir2324.petstore.model.Fish</span><span class="s0">&lt;/class&gt;</span>
+    <span class="s0">&lt;class&gt;</span><span class="s3">org.esaip.ir2324.petstore.model.PetStore</span><span class="s0">&lt;/class&gt;</span>
+    <span class="s0">&lt;class&gt;</span><span class="s3">org.esaip.ir2324.petstore.model.Product</span><span class="s0">&lt;/class&gt;</span>
+
+    <span class="s0">&lt;properties&gt;</span>
+      <span class="s0">&lt;property </span><span class="s1">name</span><span class="s2">=&quot;jakarta.persistence.jdbc.url&quot; </span><span class="s1">value</span><span class="s2">=&quot;jdbc:h2:tcp://localhost:9095/mem:testdb&quot;</span><span class="s0">/&gt;</span>
+      <span class="s0">&lt;property </span><span class="s1">name</span><span class="s2">=&quot;jakarta.persistence.jdbc.user&quot; </span><span class="s1">value</span><span class="s2">=&quot;sa&quot;</span><span class="s0">/&gt;</span>
+      <span class="s0">&lt;property </span><span class="s1">name</span><span class="s2">=&quot;jakarta.persistence.jdbc.password&quot; </span><span class="s1">value</span><span class="s2">=&quot;&quot;</span><span class="s0">/&gt;</span>
+      <span class="s0">&lt;property </span><span class="s1">name</span><span class="s2">=&quot;jakarta.persistence.jdbc.driver&quot; </span><span class="s1">value</span><span class="s2">=&quot;org.h2.Driver&quot;</span><span class="s0">/&gt;</span>
+      <span class="s0">&lt;property </span><span class="s1">name</span><span class="s2">=&quot;hibernate.dialect&quot; </span><span class="s1">value</span><span class="s2">=&quot;org.hibernate.dialect.H2Dialect&quot;</span><span class="s0">/&gt;</span>
+      <span class="s0">&lt;property </span><span class="s1">name</span><span class="s2">=&quot;hibernate.hbm2ddl.auto&quot; </span><span class="s1">value</span><span class="s2">=&quot;create-drop&quot;</span><span class="s0">/&gt;</span>
+      <span class="s0">&lt;property </span><span class="s1">name</span><span class="s2">=&quot;hibernate.show_sql&quot; </span><span class="s1">value</span><span class="s2">=&quot;true&quot;</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;/properties&gt;</span>
+  <span class="s0">&lt;/persistence-unit&gt;</span>
+<span class="s0">&lt;/persistence&gt;</span>
+</pre>
+</body>
+</html>
